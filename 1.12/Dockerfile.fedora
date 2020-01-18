@@ -27,6 +27,8 @@ RUN INSTALL_PKGS="golang" && \
     rpm -V $INSTALL_PKGS && \
     dnf clean all -y
 
+ENV STI_SCRIPTS_PATH /usr/libexec/s2i
+
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 # Copy manpage
